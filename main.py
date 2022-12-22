@@ -60,7 +60,7 @@ else:
         print("xsos analysis failed")
 
 # Find all .txt files in the current directory
-txt_files = glob.glob('messages*')
+txt_files = glob.glob('/var/log/messages*')
 
 # List of strings to search for
 strings_to_search = ['xfs','I/O error','xfs_do_force_shutdown','Corruption detected','xfs_buf_ioend','xfs_trans_read_buf','xfs_inode block','io_schedule_timeout','xfs_inode','xfs_inactive_ifree','xfs_iunlink_remove','xfs_imap_to_bp']
