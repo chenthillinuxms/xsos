@@ -5,6 +5,9 @@
 import os
 import subprocess
 import sys
+import glob
+import re
+
 
 print('cmd entry:', sys.argv)
 
@@ -55,3 +58,25 @@ if ( untar_filename_status == 0 ):
         print("xsos analysis sucessfully created.")
 else:
         print("xsos analysis failed")
+
+# Find all .txt files in the current directory
+txt_files = glob.glob('messages*')
+
+# List of strings to search for
+strings_to_search = ['xfs','I/O error','xfs_do_force_shutdown','Corruption detected','xfs_buf_ioend','xfs_trans_read_buf','xfs_inode block','io_schedule_timeout','xfs_inode','xfs_inactive_ifree','xfs_iunlink_remove','xfs_imap_to_bp']
+
+
+# Iterate over the files
+for txt_file in txt_files:
+    with open(txt_file) as f:
+        # Read the contents of the file into a string
+        file_contents = f.read()
+        # Iterate over the strings to search for
+        for search_string in strings_to_search:
+            # Search for the string in the file
+            if re.search(search_string, file_contents):
+                print(f'Found {search_string} in {txt_file}')
+                # Print the lines containing the string
+                for line in file_contents.split('\n'):
+                    if search_string in line:
+                        print(line)
