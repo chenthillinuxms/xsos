@@ -68,7 +68,7 @@ for key, value in options.items():
 selected_option = int(input())
 
 if selected_option == 1:
-
+        
         print("You selected Option 1 , which fetch error related to file system and disk")
         # Find all .txt files in the current directory
         txt_files = glob.glob('/var/log/messages*')
