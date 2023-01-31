@@ -11,7 +11,7 @@ How to use this script :-
 
 kindly download the main.py script on RHEL 8 VM and add execute permission and trigger as the script as given below . 
 
-
+Example :-
 #./main.py sosreport-RHEL8LAB-2023-01-30-qxhbofe.tar.xz
 
 
