@@ -9,7 +9,7 @@ https://access.redhat.com/solutions/511753
 
 How to use this script :-
 
-kindly download the main.py script on RHEL 8 VM and add execute permission and trigger as the script as given below . 
+kindly download the main.py script on RHEL 8 VM and add execute permission to download main.py file and trigger as the script as given below . 
 
 Example :-
 #./main.py sosreport-RHEL8LAB-2023-01-30-qxhbofe.tar.xz
