@@ -7,6 +7,17 @@ More information on Xsos :
 https://access.redhat.com/discussions/469323
 https://access.redhat.com/solutions/511753
 
+Error String Analysis :-
+
+
+How to use this script :-
+
+
+
+
+
+
+
 Future Plan :
 We are planning to extend the AUTOMATED SOSREPORT ANALYSIS for differnet version on RHEL and SUSE distro also . 
 https://snapcraft.io/install/xsos/opensuse
