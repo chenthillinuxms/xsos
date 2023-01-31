@@ -1,4 +1,4 @@
-**AUTOMATED SOSREPORT ANALYSIS **
+AUTOMATED SOSREPORT ANALYSIS
 
 This python Script has been designed to read the sosreport for RHEL 8 version and extract data from sosreport for log analysis . This script pull the latest version of 
 xsos open source tool and will use them for extracting sosreport data and also performs important error string analysis from the messages files . 
@@ -10,7 +10,6 @@ https://access.redhat.com/solutions/511753
 How to use this script :-
 
 kindly download the main.py script on RHEL 8 VM and add execute permission and trigger as the script as given below . 
-
 
 
 #./main.py sosreport-RHEL8LAB-2023-01-30-qxhbofe.tar.xz
