@@ -63,10 +63,11 @@ else:
 xsos_execution =  subprocess.run(["/usr/local/bin/xsos","--all",unxz_tar_file_name.split(".tar",1)[0]])
 xsos_execution_status = xsos_execution.returncode
 
-if ( untar_filename_status == 0 ):
-        print("xsos analysis sucessfully created.")
+if ( xsos_execution_status == 0 ):
+        print("xsos execution completed sucessfully.")
 else:
-        print("xsos analysis failed")
+        print("xsos execution failed")
+
 
 ### Function to Uncompress the .gz file inside the /var/log #####
 def gz_extract(directory):
