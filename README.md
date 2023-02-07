@@ -36,17 +36,10 @@ Case 5:-
 5 To fetch all possible error related to the messages
 
 Case 6:-
-6 Exit option selected to come out of this script
+6 To search your own choice of one or more strings
 
-
-
-
-
-
-
-
-
-
+case 7:-
+7 Exit option selected to come out of this script 
 
 
 Future Plan :
