@@ -69,6 +69,7 @@ else:
         print("xsos execution failed")
 
 
+
 ### Function to Uncompress the .gz file inside the /var/log #####
 def gz_extract(directory):
     extension = ".gz"
@@ -105,7 +106,7 @@ def error_string_search(strings_to_search):
 
 #### Messages greping section #################
 
-options = {1: "To fetch error related to file system and disk", 2: "To fetch the error related to Memory", 3: "To fetch the error related to softlock CPU and kernel panic", 4: "To fetch possible error related to Antivirus issues and endpoint security daemon", 5: "To fetch all possible error related to the messages", 6: "Exit option selected to come out of this script"}
+options = {1: "To fetch error related to file system and disk", 2: "To fetch the error related to Memory", 3: "To fetch the error related to softlock CPU and kernel panic", 4: "To fetch possible error related to Antivirus issues and endpoint security daemon", 5: "To fetch all possible error related to the messages", 6:"To search your own choice of one or more strings", 7: "Exit option selected to come out of this script"}
 
 print("Select an option , i.e provide the input as number for the option:")
 for key, value in options.items():
@@ -175,10 +176,23 @@ elif selected_option == 5 :
     error_string_search(strings_to_search)
     # perform action for Option 5
     exit()
+
 elif selected_option == 6 :
+        
+    #### To fetch the input string #######
+    print("To search your own choice of one or more strings")
+    input_strings_to_search = input("Enter multiple strings separated by comma: ")
+    strings_to_search = input_strings_to_search.split(",")
+    #### Calling Function to search the Error string ####
+    error_string_search(strings_to_search)
+    # perform action for Option 6
+    exit()
+
+elif selected_option == 7 :
     print("Exit option selected to come out of this script")
     exit()
-        # perform action for Option 6
+        # perform action for Option 7
+
 else:
     print("Invalid option selected")
     exit()
