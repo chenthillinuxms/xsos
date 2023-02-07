@@ -50,5 +50,8 @@ Case 6:-
 
 
 Future Plan :
-We are planning to extend the AUTOMATED SOSREPORT ANALYSIS for differnet version on RHEL and SUSE distro also . 
+We are planning to extend the AUTOMATED SOSREPORT ANALYSIS for differnet version on RHEL , Centos and Oracle linux and SUSE distro also . 
+a) Preparing similar script for RHEL 7 and 9 which will compatible for similar version on  Centos and Oracle linux .
+b) Preparing separate script to Suse 12 and Suse 15 .
+
 https://snapcraft.io/install/xsos/opensuse
