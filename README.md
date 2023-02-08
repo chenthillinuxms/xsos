@@ -33,10 +33,16 @@ Case 4:-
 4 To fetch possible error related to Antivirus issues and endpoint security daemon
 
 Case 5:-
-5 To fetch all possible error related to the messages
+5 To fetch all possible error related to the messages files
 
 Case 6:-
-6 To search your own choice of one or more strings
+6 To search your own choice of one or more error strings from messages files
+
+Case 7:-
+6 To search your own choice of one or more error strings from dmesg files
+
+Case 8:-
+6 To search your own choice of one or more error strings from secure files
 
 case 7:-
 7 Exit option selected to come out of this script 
