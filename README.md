@@ -18,7 +18,7 @@ Example :-
 
 Error String Analysis :-
 
-This script provide 5 different option to perform a error string analysis for the messages file present inside the sosreport . 
+This script provide 8 different option to perform a error string analysis for the messages file present inside the sosreport . 
 
 Case 1 :-
 1 To fetch error related to file system and disk
