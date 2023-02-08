@@ -82,7 +82,7 @@ def gz_extract(directory):
               shutil.copyfileobj(f_in, f_out)
           os.remove(gz_name) # delete zipped file
 
-#### Function to search the Error string ########
+#### Function to search messages files the Error string ########
 def error_string_search(strings_to_search):
 # Find all .txt files in the current directory
         os.chdir(full_path_sosreport_var_log_directory)
@@ -103,10 +103,53 @@ def error_string_search(strings_to_search):
                             if search_string in line:
                                 print(line)
 
+#### Function to search dmesg files the Error string ########
+def error_string_search_dmesg(strings_to_search):
+# Find all .txt files in the current directory
+        os.chdir(full_path_sosreport_var_log_directory)
+        # Find all .txt fils in the current directory
+        txt_files = glob.glob('dmesg*')
+        # Iterate over the files
+        for txt_file in txt_files:
+            with open(txt_file) as f:
+                # Read the contents of the file into a string
+                file_contents = f.read()
+                # Iterate over the strings to search for
+                for search_string in strings_to_search:
+                    # Search for the string in the file
+                    if re.search(search_string, file_contents):
+                        print(f'Found {search_string} in {txt_file}')
+                        # Print the lines containing the string
+                        for line in file_contents.split('\n'):
+                            if search_string in line:
+                                print(line)
+
+#### Function to search secure files the Error string ########
+def error_string_search_secure(strings_to_search):
+# Find all .txt files in the current directory
+        os.chdir(full_path_sosreport_var_log_directory)
+        # Find all .txt fils in the current directory
+        txt_files = glob.glob('secure*')
+        # Iterate over the files
+        for txt_file in txt_files:
+            with open(txt_file) as f:
+                # Read the contents of the file into a string
+                file_contents = f.read()
+                # Iterate over the strings to search for
+                for search_string in strings_to_search:
+                    # Search for the string in the file
+                    if re.search(search_string, file_contents):
+                        print(f'Found {search_string} in {txt_file}')
+                        # Print the lines containing the string
+                        for line in file_contents.split('\n'):
+                            if search_string in line:
+                                print(line)
+
+
 
 #### Messages greping section #################
 
-options = {1: "To fetch error related to file system and disk", 2: "To fetch the error related to Memory", 3: "To fetch the error related to softlock CPU and kernel panic", 4: "To fetch possible error related to Antivirus issues and endpoint security daemon", 5: "To fetch all possible error related to the messages", 6:"To search your own choice of one or more strings", 7: "Exit option selected to come out of this script"}
+options = {1: "To fetch error related to file system and disk", 2: "To fetch the error related to Memory", 3: "To fetch the error related to softlock CPU and kernel panic", 4: "To fetch possible error related to Antivirus issues and endpoint security daemon", 5: "To fetch all possible error related to the messages", 6:"To search any given strings from messages file ", 7: "To search any given strings from dmesg file ", 8: "To search any given strings from secure file ", 9: "Exit option selected to come out of this script"}
 
 print("Select an option , i.e provide the input as number for the option:")
 for key, value in options.items():
@@ -178,9 +221,9 @@ elif selected_option == 5 :
     exit()
 
 elif selected_option == 6 :
-        
+
     #### To fetch the input string #######
-    print("To search your own choice of one or more strings")
+    print("This option will help you to search errors inside messages file . Please provide your one or more error strings as requested below")
     input_strings_to_search = input("Enter multiple strings separated by comma: ")
     strings_to_search = input_strings_to_search.split(",")
     #### Calling Function to search the Error string ####
@@ -189,9 +232,31 @@ elif selected_option == 6 :
     exit()
 
 elif selected_option == 7 :
+
+    #### To fetch the input string #######
+    print("This option will help you to search errors inside dmesg file . Please provide your one or more error strings as requested below")
+    input_strings_to_search = input("Enter multiple strings separated by comma: ")
+    strings_to_search = input_strings_to_search.split(",")
+    error_string_search_dmesg(strings_to_search)
+    # perform action for Option 7
+    exit()
+
+
+elif selected_option == 8 :
+
+    #### To fetch the input string #######
+    print("This option will help you to search errors inside secure file . Please provide your  one or more error strings as requested below")
+    input_strings_to_search = input("Enter multiple strings separated by comma: ")
+    strings_to_search = input_strings_to_search.split(",")
+    error_string_search_secure(strings_to_search)
+    # perform action for Option 8
+    exit()
+
+    #### Calling Function to search the Error string ####
+elif selected_option == 9 :
     print("Exit option selected to come out of this script")
     exit()
-        # perform action for Option 7
+        # perform action for Option 9
 
 else:
     print("Invalid option selected")
