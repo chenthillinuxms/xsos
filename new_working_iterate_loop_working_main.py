@@ -196,7 +196,7 @@ while True:
         ## Calling Uncompress Function inside /var/log #####
         gz_extract(full_path_sosreport_var_log_directory)
         # List of strings to search for
-        strings_to_search = ['falcon_lsm_serviceable','twnotify_sys_close','twnotify','tmhook_invoke','tmhook_handler','dsa_filter','core_pkt_filter','core_pkt_hook','symev_rh_','symev_hook']
+        strings_to_search = ['falcon_lsm_serviceable','twnotify_sys_close','twnotify','tmhook_invoke','tmhook_handler','dsa_filter','core_pkt_filter','core_pkt_hook','symev_rh_','symev_hook','cshook_network_ops']
         #### Calling Function to search the Error string ####
         error_string_search(strings_to_search)
 
