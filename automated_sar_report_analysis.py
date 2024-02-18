@@ -28,6 +28,7 @@ def sar_q(directory):
         cmd5 = f"grep -v blocked"
         cmd6 = f"grep -v '^\[\[:space:\]\]\*$'"
         cmd7 = f"tr -s ' ' ','"
+
         command = f"{cmd1} | {cmd2} | {cmd3} | {cmd4} | {cmd5} | {cmd6} | {cmd7}"
         with open("output.csv", 'w') as out_file:
             result = subprocess.run(command, shell=True, stdout=out_file)
@@ -38,6 +39,7 @@ def sar_q(directory):
         df = pd.read_csv(r"output.csv")
         #df = pd.read_csv(r"output.csv", dtype={'blocked': int})
         df.columns = [ 'Time','runq-sz','plist-sz','ldavg-1','ldavg-5','ldavg-15','blocked' ]
+
         result = df.loc[df['blocked']>1]
         if result is None:
             print("No blocked state process")
@@ -48,5 +50,4 @@ def sar_q(directory):
 
 
 sar_q(directory)
-
 
