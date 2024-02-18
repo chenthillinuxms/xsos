@@ -25,9 +25,10 @@ def sar_q(directory):
         cmd2 = f"grep -v RESTART"
         cmd3 = f"grep -v Linux"
         cmd4 = f"grep -v Average"
-        cmd5 = f"grep -v '^\[\[:space:\]\]\*$'"
-        cmd6 = f"tr -s ' ' ','"
-        command = f"{cmd1} | {cmd2} | {cmd3} | {cmd4} | {cmd5} | {cmd6} "
+        cmd5 = f"grep -v blocked"
+        cmd6 = f"grep -v '^\[\[:space:\]\]\*$'"
+        cmd7 = f"tr -s ' ' ','"
+        command = f"{cmd1} | {cmd2} | {cmd3} | {cmd4} | {cmd5} | {cmd6} | {cmd7}"
         with open("output.csv", 'w') as out_file:
             result = subprocess.run(command, shell=True, stdout=out_file)
         if result.returncode == 0:
@@ -47,3 +48,5 @@ def sar_q(directory):
 
 
 sar_q(directory)
+
+
